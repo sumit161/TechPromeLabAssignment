@@ -1,0 +1,92 @@
+<div class="d-flex justify-content-between">
+  <div class="">
+    <p>
+      <strong>
+        {{ Total }}
+        <h3>Total</h3></strong
+      >
+    </p>
+  </div>
+  <div class="">
+    <p>
+      <strong>
+        {{ Closed }}
+
+        <h3>Closed</h3></strong
+      >
+    </p>
+  </div>
+  <div class="">
+    <p>
+      <strong>
+        {{ Running }}
+
+        <h3>Running</h3></strong
+      >
+    </p>
+  </div>
+  <div class="">
+    <p>
+      <strong>
+        {{ ClosureDealy }}
+        <h3>Closure Delay</h3></strong
+      >
+    </p>
+  </div>
+  <div class="">
+    <p>
+      <strong>
+        {{ Cancelled }}
+        <h3>Cancelled</h3></strong
+      >
+    </p>
+  </div>
+</div>
+<!-- #################################################### -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <canvas
+        class="chartInfo"
+        baseChart
+        [data]="barChartData"
+        [options]="barChartOptions"
+        [plugins]="barChartPlugins"
+        [legend]="barChartLegend"
+        [type]="'bar'"
+      >
+      </canvas>
+    </div>
+  </div>
+</div>
+<!-- <button (click)="forloop()">data</button> -->
+{{ property1 }} "675"<br>
+{{ property2 }}"76786"
+
+
+<h1>Graph</h1>
+<p>Startegy</p>
+{{ StartegyCount }}
+{{ StartegyStatusCountClosed }}
+Percentages : {{StartegyPer}}
+<p>Finance</p>
+{{ FinanceCount }}
+{{ FinanceStatusCountClosed }}
+Percentages :{{FinancePer}}
+<p>Quality</p>
+{{ QualityCount }}
+{{ QualityStatusCountClosed  }}
+Percentages :{{QualityPer}}
+<p>Maintenance</p>
+{{ MaintenanceCount }}
+{{ MaintenanceStatusCountClosed }}
+Percentages : {{MaintenancePer}}
+<p>Stores</p>
+{{ StoresCount }}
+{{ StoresStatusCountClosed }}
+Percentages : {{ StoresPer }}
+<p>Stores</p>
+{{ HRCount }}
+{{ HRStatusCountClosed }}
+Percentages : {{ HRPer }}
+

@@ -1,0 +1,126 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="main d-flex">
+      <mat-card class="form text-center">
+        <section *ngIf="IsHavingAccount">
+          <form [formGroup]="loginform" (ngSubmit)="(logInforms)">
+            <!-- login section -->
+            <div class="login" *ngIf="IsHavingAccount">
+              <!-- heading -->
+              <h1 class="mb-4 bg-info p-2 text-center text-white">
+                Login Page
+              </h1>
+              <!--  login username input-->
+              <div class="form-group">
+                <div class="input-group mb-3">
+                  <mat-form-field
+                    appearance="fill"
+                    color="primary"
+                    class="example-full-width"
+                  >
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput formControlName="luserName" />
+                    <mat-icon matSuffix>alternate_email</mat-icon>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <!--  login passord input-->
+              <div class="form-group">
+                <div class="input-group mb-3">
+                  <mat-form-field
+                    appearance="fill"
+                    color="primary"
+                    class="example-full-width"
+                  >
+                    <mat-label>Password</mat-label>
+                    <input type="text" formControlName="lPassWord" matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+              <!--  login button-->
+
+              <div class="text-right">
+                <button
+                  (click)="Onlogin()"
+                  class="btn-lg"
+                  mat-raised-button
+                  color="accent"
+                >
+                  log-In
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+        <section *ngIf="!IsHavingAccount" class="formSection my-4">
+          <form [formGroup]="signUpForm" (ngSubmit)="(signup)">
+            <!--  signup username input-->
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <mat-form-field
+                  appearance="fill"
+                  color="primary"
+                  class="example-full-width"
+                >
+                  <mat-label>Username</mat-label>
+                  <input type="text" formControlName="UserName" matInput />
+                  <mat-icon matSuffix>alternate_email</mat-icon>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <!--  signup passord input-->
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <mat-form-field
+                  appearance="fill"
+                  color="primary"
+                  class="example-full-width"
+                >
+                  <mat-label>Password</mat-label>
+                  <input type="text" formControlName="PassWord" matInput />
+                </mat-form-field>
+              </div>
+            </div>
+            <!--  signup ConfirmPassWord input-->
+            <div class="form-group">
+              <div class="input-group mb-3">
+                <mat-form-field
+                  appearance="fill"
+                  color="primary"
+                  class="example-full-width"
+                >
+                  <mat-label>ConfirmPassWord</mat-label>
+                  <input
+                    type="text"
+                    formControlName="ConfirmPassWord"
+                    matInput
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="m-2 text-left">
+              <button mat-raised-button class="btn-lg" (click)="submitDeta()">
+                Register
+              </button>
+            </div>
+          </form>
+        </section>
+        <div class="text-left">
+          <p>
+            <a
+              href="javascript:;"
+              (click)="IsHavingAccount = !IsHavingAccount"
+              >{{
+                IsHavingAccount
+                  ? "Dont have account"
+                  : "Allready have a account"
+              }}</a
+            >
+          </p>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

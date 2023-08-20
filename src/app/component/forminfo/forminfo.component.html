@@ -1,0 +1,164 @@
+<div class="container">
+  <form [formGroup]="creteProject" (ngSubmit)="projectdata">
+    <div class="row mt-4">
+      <!-- text area -->
+      <div class="col-sm-8">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Leave a comment</mat-label>
+          <textarea
+            matInput
+            formControlName="projectName"
+            placeholder="Project Name"
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <!-- Reason -->
+
+
+      <div class="col-sm-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Reason</mat-label>
+          <mat-select formControlName="Reason">
+            <mat-option *ngFor="let item of Reason" [value]="item">
+              {{ item}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!--  type-->
+      <div class="col-sm-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>type</mat-label>
+          <mat-select formControlName="type">
+            <mat-option *ngFor="let item of type" [value]="item">
+              {{ item}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <!-- Division-->
+      <div class="col-sm-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Division</mat-label>
+          <mat-select formControlName="Division">
+            <mat-option *ngFor="let item of division" [value]="item">
+              {{ item}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <!-- category -->
+      <div class="col-sm-4">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>category</mat-label>
+          <mat-select formControlName="Category">
+            <mat-option *ngFor="let item of Category" [value]="item">
+              {{ item }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <!-- priority -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>priority</mat-label>
+          <mat-select formControlName="priority">
+            <mat-option *ngFor="let item of Priority" [value]="item">
+              {{ item }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <!-- Department -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Department</mat-label>
+          <mat-select formControlName="Department">
+            <mat-option *ngFor="let item of Department" [value]="item">
+              {{ item }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <!-- start date as project name -->
+
+      <div class="col-sm-4">
+        <mat-form-field
+          color="primary"
+          class="example-full-width mat-field1"
+          appearance="fill"
+        >
+          <mat-label>start date </mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker1"
+            formControlName="startdate"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker1"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field
+          color="accent"
+          class="example-full-width mat-field1"
+          appearance="fill"
+        >
+          <mat-label>End date </mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="enddate" />
+          <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker2"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker2 color="primary"></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <!-- location -->
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>location</mat-label>
+          <mat-select formControlName="location">
+            <mat-option *ngFor="let item of Location" [value]="item">
+              {{ item }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col-sm-6">
+          <mat-form-field color="accent">
+              <mat-label>Inherited calendar color</mat-label>
+              <input matInput [matDatepicker]="picker1">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+          <mat-form-field color="accent" appearance="fill">
+              <mat-label>Custom calendar color</mat-label>
+              <input matInput [matDatepicker]="picker2">
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 color="primary"></mat-datepicker>
+            </mat-form-field>
+      </div>
+  </div> -->
+    <div class="text-right">
+      <button class="btn btn-primary" (click)="collectdeta()">logIn</button>
+    </div>
+  </form>
+</div>
+
